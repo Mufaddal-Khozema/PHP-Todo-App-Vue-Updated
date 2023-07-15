@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title></title>
+</head>
+
+<body>
+  <div id="page-wrap">
+    <div id="header">
+      <h1><a href="">PHP Sample Test App</a></h1>
+    </div>
+    <div id="main">
+      <ul id="list-items" class="list" ref="list" class="ui-sortable">
+        <list-items :todos="todos"></list-items>
+      </ul>  
+      <br />
+      <todo-insert :todos="todos"></todo-insert>
+    </div>
+  </div>  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script> -->
+<!-- CDNJS :: Sortable (https://cdnjs.com/) -->
+<!-- <script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script> -->
+<!-- CDNJS :: Vue.Draggable (https://cdnjs.com/) -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js"></script> -->
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
+
+       

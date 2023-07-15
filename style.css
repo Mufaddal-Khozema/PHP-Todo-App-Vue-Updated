@@ -1,0 +1,380 @@
+/*
+    RESET
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+img,
+a img {
+    border: none;
+}
+
+input {
+    outline: 0;
+}
+
+/*
+    STRUCTURE
+*/
+body {
+    font: 14px/1.1 Helvetica, Sans-Serif;
+    background: url(images/stripe.png) repeat-x;
+    background-color: rgba(15, 12, 32, 0.873);
+}
+
+#page-wrap {
+    width: max-content;
+    padding: 1px;
+    margin: auto;
+    margin-top: 1rem;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.434);
+}
+
+#main {
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 510px) {
+    /* CSS rules for small mobile devices */
+    #page-wrap {
+        width: 100%;
+    }
+  }
+
+hr {
+    height: 1px;
+    background: #ccc;
+    clear: both;
+    margin: 20px 0;
+    border: none;
+    display: block;
+}
+
+
+/*
+    TYPOGRAPHY
+*/
+a {
+    text-decoration: none;
+    color: rgba(15, 12, 32, 0.873);
+    text-shadow: rgba(0, 0, 0, 0.275) 1px 2px 3px;
+    outline: none;
+}
+
+h1 {
+    font: bold 36px Helvetica, Sans-Serif;
+    margin: 0 0 8px 0;
+}
+
+h2 {
+    margin: 0 0 10px 0;
+}
+
+p {
+    margin: 0 0 6px 0;
+}
+
+.button {
+    /* background: rgb(27,36,0); */
+    background: rgba(15, 12, 32, 0.873);
+    font: bold 16px Helvetica;
+    padding: 6px 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 1px 1px #666;
+    box-shadow: 0 1px 3px #999;
+    -webkit-box-shadow: 0 1px 3px #999;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.button:hover {
+    background-position: bottom left;
+}
+
+.red {
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+}
+
+
+
+/*
+    HEADER
+*/
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+#control {
+    width: 500px;
+    float: right;
+    padding: 10px 237px 0 0;
+    text-align: right;
+}
+
+
+
+/*
+    LISTS
+*/
+.list {
+    list-style: none;
+}
+
+.list li {
+    padding: 1rem;
+    width: max-content;
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+ul {
+    margin: 1rem;
+}
+
+ul .item {
+    margin-bottom: 1rem;
+    border: 1px rgba(128, 128, 128, 0.469) solid;
+}
+
+.list li.hidden {
+    pointer-events: none;
+    transition: opacity 600ms;
+    opacity: 0;
+}
+
+.list li.dragging {
+    opacity: 0.6;
+}
+
+.list li.dragging :where(li) {
+    opacity: 0;
+}
+
+.list li span {
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    width: 450px;
+    display: block;
+    position: relative;
+    height: 1rem;
+    overflow: hidden;
+}
+
+li .dim-alert {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: red;
+    opacity: 0.75;   
+    overflow: hidden;
+}
+
+form .dim-alert {
+    color: red;
+    opacity: 0.75;   
+    overflow: hidden;
+}
+
+@media (max-width: 510px) {
+    /* CSS rules for small mobile devices */
+    .list li {
+        margin: 1rem 0;
+    }   
+
+    .list li span {
+        padding: 0.4rem 0.5rem;
+    }
+}
+
+.colorBlue span {
+    background: rgb(115, 184, 191);
+}
+
+.colorYellow span {
+    background: rgb(229, 255, 83);
+}
+
+.colorRed span {
+    background: rgb(187, 49, 47);
+    color: white;
+}
+
+.colorGreen span {
+    background: rgb(145, 191, 75);
+}
+
+.tab {
+    margin-right: 8px;
+    background: url(images/minibuttons.png) no-repeat;
+    background-size: 300px;
+    height: 50px;
+    /* top: 4px; */
+}
+
+
+.draggertab {
+    width: 4.6rem;
+    cursor: move;
+}
+
+.draggertab:hover {
+    background-position: 0 -50px;
+}
+
+.colortab {
+    width: 5rem;
+    background-position: -73px 0;
+    cursor: pointer;
+}
+
+.colortab:hover {
+    background-position: -73px -50px;
+}
+
+.deletetab {
+    width: 2.3rem;
+    background-position: -192px 0;
+    cursor: pointer;
+}
+
+.deletetab.reveal {
+    position: relative;
+    right: 0px;
+    width: 120px;
+}
+
+.deletetab:hover {
+    background-position: -192px -50px;
+}
+
+.donetab {
+    width: 2.4rem;
+    background-position: -153px 0;
+    cursor: pointer;
+}
+
+.donetab:hover {
+    background-position: -153px -50px;
+}
+
+@media (max-width: 510px) {
+    /* CSS rules for small mobile devices */
+    .tab {
+        height: 1.8rem;
+        background-size: 11rem;
+    }  
+    
+    .draggertab:hover {
+        background-position: 0 -1.8rem;
+    }
+
+    .colortab {
+        background-position: -2.65rem 0;
+    }
+
+    .colortab:hover {
+        background-position: -2.65rem -1.8rem;
+    }
+
+    .donetab {
+        background-position: -5.6rem 0;
+    }
+
+    .donetab:hover {
+        background-position: -5.6rem -1.9rem;
+    }
+
+    .deletetab {
+        background-position: -7rem 0;
+    }
+
+    .deletetab:hover {
+        background-position: -7rem -1.9rem;
+    }
+}
+.crossout {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/*
+    FORM STUFF
+*/
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    background: #999;
+    color: white;
+    padding: 3px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 324px;
+    border: 3px solid #999;
+    font-size: 18px;
+    padding: 7px;
+    display: block;
+}
+
+#add-new input[type="text"] {
+    width: 532px;
+    float: left;
+    margin: 0 10px 0 69px;
+}
+
+#add-new input[type="text"]:focus {
+    border-color: #73B8BF;
+}
+
+#add-new input[type="submit"] {
+    padding: 10px 12px;
+}
+
+
+/*
+    MESSAGING
+*/
+.message {
+    padding: 10px;
+    margin: 0 0 10px 0;
+    width: 607px;
+}
+
+.good {
+    background: #9ff5b6;
+}
+
+.bad {
+    color: #ef0040;
+}
+
+#temp {
+    width: 500px;
+    height: 500px
+}
